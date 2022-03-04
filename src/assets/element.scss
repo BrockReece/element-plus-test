@@ -1,0 +1,134 @@
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': rgb(2, 122, 131),
+    )
+  ),
+  $border-color: (
+    'base': #BCBDBD
+  )
+);
+
+@use "element-plus/theme-chalk/src/index.scss" as *;
+@import 'element-plus/theme-chalk/src/reset.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body {
+    font-family: "Roboto", sans-serif;
+    @apply cui-h-full cui-antialiased cui-m-0;
+}
+
+h1, h2, h3, h4, h5, h6, span, p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+
+%material-icon {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;  
+
+    svg {
+        display: none;
+    }
+}
+
+$--icon-font-size: 16px;
+
+// input prefix:
+.el-date-editor:not(.el-date-editor--time) .el-input__prefix-inner {
+    .el-icon {
+        @extend %material-icon;
+        font-size: $--icon-font-size;
+        &::before {
+            content: 'calendar_today';
+        }
+    }
+}
+
+.el-date-editor {
+    .el-range__close-icon {
+        @extend %material-icon;
+        &::before {
+            content: 'cancel'
+        }
+    }
+
+    .clear-icon {
+        @extend %material-icon;
+        &::before {
+            content: 'cancel'
+        }
+    }
+}
+
+.el-range-editor {
+    .el-input__icon.el-range__icon {
+        @extend %material-icon;
+        font-size: $--icon-font-size;
+        &::before {
+            content: 'date_range';
+        }
+    }
+}
+
+.el-picker-panel__icon-btn {
+    margin-top: 5px!important;
+    &.d-arrow-left {
+        .el-icon {
+            @extend %material-icon;
+            font-size: $--icon-font-size;
+            &::before {
+                content: 'keyboard_double_arrow_left';
+            }
+        }
+    }
+
+    &.arrow-left {
+        .el-icon {
+            @extend %material-icon;
+            font-size: $--icon-font-size;
+            &::before {
+                content: 'keyboard_arrow_left';
+            }
+        }
+    }
+
+    &.d-arrow-right {
+        .el-icon {
+            @extend %material-icon;
+            font-size: $--icon-font-size;
+            &::before {
+                content: 'keyboard_double_arrow_right';
+            }
+        }
+    }
+
+    &.arrow-right {
+        .el-icon {
+            @extend %material-icon;
+            font-size: $--icon-font-size;
+            &::before {
+                content: 'keyboard_arrow_right';
+            }
+        }
+    }
+}
+
+
+.el-sub-menu .el-sub-menu__icon-arrow {
+    @extend %material-icon;
+    font-size: 16px;
+    &::before {
+        content: 'expand_more';
+    }
+}
