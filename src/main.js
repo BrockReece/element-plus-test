@@ -10,6 +10,7 @@ const router = createRouter({
     mode: 'history',
     history: createWebHistory(),
     routes: [
+        { path: '/', redirect: '/dashboard/work' },
         { path: '/dashboard/work', component: <Pending /> },
         { path: '/work', component: <Dashboard title="My work" /> },
         { path: '/work/completed', component: <Dashboard title="Completed work" /> }
